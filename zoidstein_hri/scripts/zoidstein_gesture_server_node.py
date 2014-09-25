@@ -54,7 +54,7 @@ class ZoidsteinGestureActionServer(IGestureActionServer):
             duration = goal.duration
 
             if duration == -1:
-                duration = Gesture.default_duration
+                duration = gesture.default_duration
 
             self.rsm_serial_node.executeScript(gesture.bcon_script)
             timer = Timer(duration, self.set_succeeded, [goal_handle])

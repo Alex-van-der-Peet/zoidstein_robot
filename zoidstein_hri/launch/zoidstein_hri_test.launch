@@ -39,7 +39,9 @@
     <node pkg="hri_common" type="mini_head_lip_sync_node.py" name="lip_sync" output="screen"/>
     <node pkg="hri_common" type="mini_head_expression_server_node.py" name="expression_server" output="screen"/>
     <node pkg="hri_common" type="itf_tts_server_node.py" name="tts_server" output="screen"/>
-
+    <node pkg="hri_framework" type="perception_synthesiser.py" name="perception_synthesiser" output="screen">
+        <param name="perception_sources_yaml" value="$(find zoidstein_hri)/launch/perception_sources.yaml" />
+    </node>
 
     <!-- Fake people -->
     <node pkg="tf" type="static_transform_publisher" name="base_link_to_map" args="0 0 1 0 0 0 /map /base_link 20" />
